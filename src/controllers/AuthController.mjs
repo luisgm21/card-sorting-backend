@@ -1,4 +1,5 @@
 import AuthService from '../services/AuthService.mjs';
+import { generateToken } from '../middleware/authMiddleware.mjs';
 
 const AuthController = {
   /**
@@ -7,10 +8,11 @@ const AuthController = {
   async register(req, res, next) {
     try {
       const user = await AuthService.register(req.body);
+      const token = generateToken(user);
       res.status(201).json({
         success: true,
         message: 'Usuario registrado correctamente',
-        data: user
+        data: { user, token }
       });
     } catch (error) {
       next(error);
@@ -32,10 +34,11 @@ const AuthController = {
       }
 
       const user = await AuthService.login(email, password);
+      const token = generateToken(user);
       res.json({
         success: true,
         message: 'Inicio de sesión exitoso',
-        data: user
+        data: { user, token }
       });
     } catch (error) {
       next(error);

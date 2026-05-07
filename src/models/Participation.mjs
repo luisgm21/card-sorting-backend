@@ -85,7 +85,7 @@ const participationSchema = new mongoose.Schema({
 // Índices para análisis rápido
 participationSchema.index({ studyId: 1, status: 1 });
 participationSchema.index({ studyId: 1, completedAt: -1 });
-participationSchema.index({ anonymousId: 1 });
+// anonymousId ya tiene índice por unique:true + sparse:true
 
 // Método para completar participación
 participationSchema.methods.complete = async function(sortingData) {

@@ -104,15 +104,14 @@ const studySchema = new Schema({
 });
 
 // Generar link único para compartir
-studySchema.pre('save', async function(next) {
+studySchema.pre('save', async function() {
   if (!this.shareableLink) {
     this.shareableLink = Math.random().toString(36).substring(2, 15);
   }
-  next();
 });
 
 // Índices para búsquedas rápidas
 studySchema.index({ status: 1, createdBy: 1 });
-studySchema.index({ shareableLink: 1 });
+// shareableLink ya tiene índice por unique:true
 
 export default model('Study', studySchema);
