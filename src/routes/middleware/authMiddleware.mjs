@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import UserRepository from '../repositories/UserRepository.mjs';
+import UserRepository from '../../repositories/UserRepository.mjs';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'card-sorting-secret-dev';
 

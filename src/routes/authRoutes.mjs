@@ -5,7 +5,7 @@ import {
   validateLogin,
   validateChangePassword
 } from '../validators/AuthValidators.mjs';
-import { authenticate } from '../middleware/authMiddleware.mjs';
+import { authenticate } from '../routes/middleware/authMiddleware.mjs';
 
 const router = Router();
 

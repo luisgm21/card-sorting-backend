@@ -1,5 +1,5 @@
 import AuthService from '../services/AuthService.mjs';
-import { generateToken } from '../middleware/authMiddleware.mjs';
+import { generateToken } from '../routes/middleware/authMiddleware.mjs';
 
 const AuthController = {
   /**

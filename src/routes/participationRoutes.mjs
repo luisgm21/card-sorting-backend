@@ -7,7 +7,7 @@ import {
   validateListParticipations,
   validateStudyResults
 } from '../validators/ParticipationValidators.mjs';
-import { authenticate, optionalAuth } from '../middleware/authMiddleware.mjs';
+import { authenticate, optionalAuth } from '../routes/middleware/authMiddleware.mjs';
 
 const router = Router();
 

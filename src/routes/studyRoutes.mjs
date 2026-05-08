@@ -7,7 +7,7 @@ import {
   validatePublicLink,
   validateListStudies
 } from '../validators/StudyValidators.mjs';
-import { authenticate, authorize } from '../middleware/authMiddleware.mjs';
+import { authenticate, authorize } from '../routes/middleware/authMiddleware.mjs';
 
 const router = Router();
 
